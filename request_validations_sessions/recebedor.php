@@ -15,6 +15,16 @@ $idade = filter_input(INPUT_POST, 'idade', FILTER_SANITIZE_NUMBER_INT); // Ele v
  *  É O NOME DO CAMPO INFORMADO NO HTML
  */
 if ($nome && $email && $idade) {
+
+    //LEMBRANDO QUE O PHP TRABALHA COM MILISEGUNDOS
+    $expiracao = time() + (86400 * 30); //Aqui ele diz que tem um prazo de validade de 30 dias
+    setcookie('nomeCookie', $nome, $expiracao); //Definindo um cookie
+    /**
+     * Para definirmos um cookie colocamos a palavra 'setcookie' que recebe
+     * vários parâmetros. Lembrando também que o cookie é TEMPORÁRIO, ou seja,
+     * temos que colocar o nome do cookie, o valor que vai ser salvo no cookie
+     * e o momento que ele expira.
+     */
     echo 'NOME: ' . $nome . '<br/>';
     echo 'EMAIL: ' . $email . '<br/>';
     echo 'IDADE: ' . $idade;

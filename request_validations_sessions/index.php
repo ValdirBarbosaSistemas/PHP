@@ -9,6 +9,9 @@ if ($_SESSION['aviso']) {
 }
 ?>
 
+<!-- Link para apagar o cookie criado -->
+<a href="apagar.php">Apagar Cookie</a>
+
 <form method="POST" action="recebedor.php">
     <label>Nome: <br />
         <input type="text" name="nome" />
