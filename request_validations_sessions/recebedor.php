@@ -3,6 +3,9 @@
 /**
  * Método para pegar os dados do formulário no html
  */
+
+session_start(); //salvando os dados em uma seção (SEMPRE COLOCAR ANTES DA PÁGINA)
+
 $nome = filter_input(INPUT_POST, 'nome');
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL); //Validação de email
 $idade = filter_input(INPUT_POST, 'idade', FILTER_SANITIZE_NUMBER_INT); // Ele vai alterar os dados para ficar de acordo com o que foi proposto
@@ -11,7 +14,7 @@ $idade = filter_input(INPUT_POST, 'idade', FILTER_SANITIZE_NUMBER_INT); // Ele v
  *  O TIPO DE MÉTODO QUE FOI USADO/COLOCADO NO FORMULARIO. A SEGUNDA INFORMAÇÃO
  *  É O NOME DO CAMPO INFORMADO NO HTML
  */
-if ($nome && $idade) {
+if ($nome && $email && $idade) {
     echo 'NOME: ' . $nome . '<br/>';
     echo 'EMAIL: ' . $email . '<br/>';
     echo 'IDADE: ' . $idade;
@@ -20,6 +23,13 @@ if ($nome && $idade) {
     /**Para voltar para a página principal (redirecionar), usamos um 'truque' que é
      * usarmos a função 'header' junto com a troca da informação 'Location'.
      */
+
+    $_SESSION['aviso'] = 'Preencha os dados corretamente!!!';
+    /**No código acima, declaramos a variável "SESSION" que é do tipo ARRAY 
+     * e colocamos o texto que queremos que apareça na tela.
+     * VER MAIS SOBRE A DECLARAÇÃO DO SESSION NO PHP
+     */
+
     header("Location: index.php"); //Redirecionando para a pagina 'index.php'
     exit;
     /**

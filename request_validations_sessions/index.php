@@ -1,5 +1,12 @@
 <?php
 require('header.php');
+
+session_start(); //Iniciando a seção (SEMPRE COLOCAR ANTES DA PÁGINA)
+
+if ($_SESSION['aviso']) {
+    echo $_SESSION['aviso']; //Chamando a variável criada 'aviso'
+    $_SESSION['aviso'] = ''; //Zerando o aviso na tela
+}
 ?>
 
 <form method="POST" action="recebedor.php">
