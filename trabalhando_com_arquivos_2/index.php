@@ -21,3 +21,8 @@ echo 'Arquivo criado com sucesso!!!'; */
  * OBS: (COM O 'FILE_PUT_CONTENTS) SE O ARQUIVO NÃO EXISTIR ELE VAI CRIAR. 
  * CASO O ARQUIVO JA EXISTA, ELE VAI ACRESCENTAR AO MESMO.
  */
+
+//EXCLUINDO ARQUIVOS
+
+unlink('texto.txt');
+echo 'Arquivo excluído com sucesso';

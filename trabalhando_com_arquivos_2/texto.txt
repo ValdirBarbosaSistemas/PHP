@@ -12,3 +12,32 @@ Curabitur a tortor at erat venenatis dignissim. Nunc tempor felis sed ligula ult
 Curabitur enim odio, tempus non accumsan ut, molestie ac felis. Curabitur suscipit tincidunt ultrices. Integer lacinia tempor rhoncus. Aliquam erat volutpat. Praesent condimentum mi eget venenatis fringilla. Etiam ultricies consectetur consectetur. Fusce at arcu id nisl tincidunt tincidunt in id libero.
 
 Generated 5 paragraphs, 323 words, 2236 bytes of Lorem Ipsum
+
+
+/** RESOLUÇÃO EXERCÍCIO
+ * <form method="POST">
+ *Nome:
+ *<input type="text" name="nome" />
+ *<input type="submit" value="Enviar">
+ *</form>
+ *<?php
+ *if(isset($_POST['nome']) and !empty($_POST['nome'])){
+ *$nome = $_POST['nome'];
+ *$lista = file_get_contents('lista.txt');
+ *if($lista != ''){
+ *file_put_contents('lista.txt', $lista.'<br/>'.$nome);
+ *}else{
+ *file_put_contents('lista.txt', $nome);
+ *}
+ *}else{
+ *echo 'Nada foi enviado';
+ *}
+ *$exibeLista = file_get_contents('lista.txt');
+ *$array = explode('<br/>', $exibeLista);
+ *echo '<ul>';
+ *foreach($array as $item) {
+ *echo '<li>'.$item.'</li>';
+ *}
+ *echo '</ul>';
+ *?> 
+ */
