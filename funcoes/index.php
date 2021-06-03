@@ -35,6 +35,7 @@ echo "Total: " . $soma;
 
 //-------------------REFERÊNCIA OU VALOR
 
+//VALOR
 function somar2($n1, $n2)
 {
     $total = $n1 + $n2;
@@ -46,16 +47,17 @@ $soma = somar2($x, $y);
 
 echo "Total: " . $soma;
 
-function somar3($n1, $n2, &$total)
+//REFERÊNCIA
+function somar3($n1, $n2, &$total) //Para se usar a variável por referência, usa-se o sinal '&' antes da variável
 {
-    $total = $n1 + $n2;
+    $total = $n1 + $n2; //Aqui ele ja está modificado
 }
 $x = 3;
 $y = 2;
 //$soma = somar2($x, $y);
 $soma = 0;
 
-somar($x, $y, $soma);
+somar($x, $y, $soma); //O resultado será 5
 
 echo "Total: " . $soma;
 
@@ -77,6 +79,10 @@ echo $funcao(1000);
 
 $dizimo = fn ($valor) => $valor * 0.1;
 echo $dizimo(1000);
+/**
+ * Arrow functions é uma função ANÔNIMA que não precisa de return e toda sua declaração é 'fn'
+ * junto com o sinal da flecha '=>'. NÃO SE USA RETURN
+ */
 
 //------------------FUNÇÕES RECURSIVAS
 
@@ -87,6 +93,7 @@ function dividir(int $numero)
 
     if (round($metade) > 0) { //O round serve para arredondar um número em PHP
         dividir($metade);
+        //Função recursiva serve para ser usada nela mesma
     }
 }
 
