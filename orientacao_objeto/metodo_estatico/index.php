@@ -16,4 +16,7 @@ class Matematica
 echo Matematica::somar(2, 3);
 /** Para se ter acesso a um método estático chama a classe 
  *  e usa-se o sinal (::) junto com o nome do método criado
+ *  NOTA-SE QUE ELA ESTÁ REFERENCIANDO A PRÓPRIA CLASSE, OU SEJA, TÁ DIZENDO
+ *  QUE O MÉTODO SOMAR FAZ PARTE DA CLASSE MATEMÁTICA. (A FUNÇÃO SOMAR FAZ 
+ *  PARTE DA CLASSE MATEMÁTICA)
  */
