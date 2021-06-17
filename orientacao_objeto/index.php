@@ -12,6 +12,7 @@ class Post
     public function __construct($qtdLikes)
     {
         $this->likes = $qtdLikes;
+        //Consultar banco de dados para pegar as informações do POST $id por exemplo
     }
 
     //Declaração de métodos
@@ -38,7 +39,8 @@ $post1->setAuthor('Valdir');
 
 $post2 = new Post($qtdLikes = 0); //Pode-se colocar o valor do parâmetro zerado/padrão
 //$post2->likes = 10;
+$post2->aumentarLike();
 $post2->setAuthor('Barbosa');
 
-echo "POST1: " . $post1->likes . "likes" . $post1->getAuthor() . "<br/>"; //Acessando a propriedade
+echo "POST1: " . $post1->likes . "likes" . $post1->getAuthor() . "<br/>" . "</br>"; //Acessando a propriedade
 echo "POST2: " . $post2->likes . "likes" . $post2->getAuthor() . "<br/>"; //Acessando a propriedade
