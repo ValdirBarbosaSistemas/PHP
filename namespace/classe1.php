@@ -1,5 +1,5 @@
 <?php
-//A declaração do namespace pode ser qualquer nome
+//A declaração do namespace pode ser qualquer nome SEM ASPAS
 namespace classe1;
 
 class MinhaClasse
