@@ -43,3 +43,7 @@ $db->listarProdutos();
 
 $db2 = new MongoDb();
 $db2->listarProdutos();
+
+/**
+ * INTERFACE É UM GUIA PARA IMPLEMENTAÇÃO DE UMA CLASSE
+ */
