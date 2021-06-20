@@ -28,7 +28,7 @@ class Matematica
 
     public function __construct($b)
     {
-        $this->basico = $b; //Chamando a classe Basico1 e colocando na variavel $basico
+        $this->basico = $b;
     }
 
     //Basicamente ta terceirizando o processo de soma
@@ -38,8 +38,10 @@ class Matematica
     }
 }
 
-$basico = new Basico1();
+$basico = new Basico1(); //Chamando a classe Basico1 e colocando na variavel $basico
+//OU TEMOS OUTRA FORMA...
 $mat = new Matematica($basico);
+$mat = new Matematica(new Basico1()); //Chamando a classe "Basico1" e colocando dentro da classe Matemática
 echo $mat->somar(10, 15);
 
 //-------------------------OUTRO EXEMPLO----------------------------
