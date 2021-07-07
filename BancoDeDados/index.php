@@ -1,6 +1,6 @@
 <?php
 
-require_once 'configuration_db.php'; //chamando as configurações criadas do banco de dados
+//require_once 'configuration_db.php'; //chamando as configurações criadas do banco de dados
 
 /** No php, para se ter acesso ao banco, temos que criá-lo, ou seja,
  * instanciar um objeto de nome PDO com os dados abaixo...
