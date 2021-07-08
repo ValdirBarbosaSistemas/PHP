@@ -8,7 +8,10 @@
 
 //Aqui colocamos o servidor em que está o nosso banco de dados,
 //no nosso exemplo é a conexão com o pgadmin (poderia ser com o localhost também)
-$servidor = "127.0.0.1";
+$servidor = "localhost";
+
+//A porta utilizada no postgres
+$porta = 5432;
 
 //Aqui é o nome do banco de dados que foi criado no pgadmin
 $banco = 'Banco_PHP';
@@ -24,7 +27,7 @@ $senha ="V@ldir";
 
 //Aqui criamos a conexão utilizando o servidor, nome do banco, usuario e senha,
 //caso dê erro, retorna um erro ao usuário.
-$conexao = pg_connect($servidor, $banco, $usuario, $senha) or
-die ("Não foi possível conectar ao servidor PostGreSQL");
+//$conexao = pg_connect($servidor, $banco, $usuario, $senha) or
+//die ("Não foi possível conectar ao servidor PostGreSQL");
 //caso a conexão seja efetuada com sucesso, exibe uma mensagem ao usuário
-echo "Conexão efetuada com sucesso!!";
+//echo "Conexão efetuada com sucesso!!";
