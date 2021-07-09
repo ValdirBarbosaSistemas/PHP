@@ -23,7 +23,7 @@ $usuario = "postgres";
 //Aqui colocamos a senha do usuário, por padrão o usuário root vem sem senha,
 //mas é altamente recomendável criar uma senha para o usuário root, visto que ele é
 //o que tem mais privilégios no servidor
-$senha ="V@ldir";
+$senha = "V@ldir";
 
 //Aqui criamos a conexão utilizando o servidor, nome do banco, usuario e senha,
 //caso dê erro, retorna um erro ao usuário.
@@ -31,3 +31,14 @@ $senha ="V@ldir";
 //die ("Não foi possível conectar ao servidor PostGreSQL");
 //caso a conexão seja efetuada com sucesso, exibe uma mensagem ao usuário
 //echo "Conexão efetuada com sucesso!!";
+
+/** No php, para se ter acesso ao banco, temos que criá-lo, ou seja,
+ * instanciar um objeto de nome PDO com os dados abaixo...
+ */
+$pdo = new PDO("pgsql: dbname =" . $banco . ";host =" . $servidor . ";port =" . $porta, $usuario, $senha); // Qual o tipo do banco, o nome do banco, onde ta o banco e a senha dele
+/* $sql = $pdo->query('SELECT * FROM usuarios');
+
+$dados = $sql->fetchAll(pdo::FETCH_ASSOC);
+
+echo '<pre>';
+print_r($dados); */
