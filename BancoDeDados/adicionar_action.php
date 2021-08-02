@@ -8,14 +8,15 @@ $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL); //(FILTER_VAL
 
 //Confirmando a validação
 if ($name && $email) {
-    $sql = $pdo->prepare("INSERT INTO usuarios (nome, email) VALUES = (:name, :email)"); //Ver mais sobre o (PDO PREPARE)
+    $sql = $pdo->prepare("select * from usuarios"); //Ver mais sobre o (PDO PREPARE)
+
     // Aqui ele ta associando o valor que voce colocou
     $sql->bindValue(':name', $name); // o (bindValue) por padrão recebe 2 parâmetros, o primeiro é o que eu quero modificar/alterar e o segundo é a variável que vai receber 
     //$sql->bindParam(":email", $email);
     $sql->bindValue(':email', $email);
 
-    $sql->execute();
-
+    $dados = $sql->execute();
+    print_r($dados);
     header("Location: index.php");
     exit;
     
