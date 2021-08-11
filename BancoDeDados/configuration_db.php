@@ -5,9 +5,10 @@
 //usuario
 //senha
 
-try {
-    $conn = new PDO('mysql:host=127.0.0.1;dbname=Banco_PHP', 'root', 'V@ldir999578624');
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  } catch(PDOException $e) {
-    echo 'ERROR: ' . $e->getMessage();
-  }
+$db_name = 'Banco_PHP';
+$host_name = 'localhost';
+$user_name = 'root';
+$password = '';
+
+
+$pdo = new PDO("mysql:host=" . $host_name . ";dbname=" . $db_name, $user_name, $password);

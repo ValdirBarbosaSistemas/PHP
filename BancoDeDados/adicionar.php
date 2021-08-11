@@ -10,10 +10,5 @@
         <input type="email" name="email" />
     </label><br /><br />
 
-    <label>
-        Telefone: <br />
-        <input type="tel" name="telefone" />
-    </label><br /> <br />
-
     <input type="submit" value="Adicionar" />
 </form>
