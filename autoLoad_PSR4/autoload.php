@@ -18,3 +18,4 @@ spl_autoload_register(function ($class) {
     }
 });
 //AUTOLOAD RECOMENDADO PELO PSR-4
+//NO PHP TEMOS UMA CONSTANTE CHAMADA (DIRECTORY_SEPARATOR) que serve para fazer a separação de diretórios nos arquivos '\\' ou '/'
