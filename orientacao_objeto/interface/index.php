@@ -1,8 +1,11 @@
 <?php
+
 interface Database
 {
     public function listarProdutos();
+
     public function adicionarProduto();
+
     public function removerProduto();
 }
 
@@ -15,10 +18,12 @@ class MysqlDb implements Database
 
     public function adicionarProduto()
     {
+        echo "Adicionando dados...";
     }
 
     public function removerProduto()
     {
+        echo "Removendo dados...";
     }
 }
 
@@ -31,10 +36,12 @@ class MongoDb implements Database
 
     public function adicionarProduto()
     {
+        echo "Adicionando dados...";
     }
 
     public function removerProduto()
     {
+        echo "Removendo dados...";
     }
 }
 
