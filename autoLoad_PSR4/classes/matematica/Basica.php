@@ -1,5 +1,6 @@
 <?php
 
+//Toda classe tem que ter um namespace
 namespace matematica;
 
 class Basica
