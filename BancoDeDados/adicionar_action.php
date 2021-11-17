@@ -1,5 +1,5 @@
 <?php
-require "configuration_db.php"; //Pegando as informações da configuração do banco de dados para se ter acesso
+require 'configuration_db.php'; //Pegando as informações da configuração do banco de dados para se ter acesso
 
 //Pegando os itens do formulário
 
