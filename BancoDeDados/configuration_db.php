@@ -5,7 +5,7 @@
 //usuario
 //senha
 
-$db_name = 'Banco_PHP';
+$db_name = 'banco_php';
 $host_name = 'localhost';
 $user_name = 'root';
 $password = '';
