@@ -28,7 +28,8 @@ if ($sql->rowCount() > 0) { //Se no sql tiver registro...
             <td>
                 <a href="editar.php?id=<?php echo $usuario['id']; ?>">[Editar]</a>
                 <!-- Para saber QUEM eu vou editar-->
-                <a href="excluir.php?excluir=<?php echo $usuario['id']; ?>">[Excluir]</a>
+                <a href="excluir.php?id=<?php echo $usuario['id']; ?>"
+                   onclick="return confirm('Tem certeza que deseja excluir?')">[Excluir]</a>
             </td>
         </tr>
     <?php endforeach; ?>

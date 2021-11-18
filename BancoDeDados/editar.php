@@ -24,9 +24,12 @@ if ($id) {
 ?>
 <h1>Editar Usuário</h1>
 <form method="POST" action="editar_action.php">
+
+    <input type="hidden" name="id" value="<?php echo $info['id']; ?>"/>
+
     <label>
         Nome: <br/>
-        <input type="text" name="nome" value="<?= $info['nome']; ?> "/>
+        <input type="text" name="nome" value="<?= $info['nome']; ?> "/> <!-- Forma para mostrar na tela sem usar o 'echo' -->
     </label><br/><br/>
 
     <label>
