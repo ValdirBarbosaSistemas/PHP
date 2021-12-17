@@ -1,5 +1,8 @@
 <?php
 require 'configuration_db.php'; //Pegando as informações da configuração do banco de dados para se ter acesso
+require '../DAOPHP/dao/UsuarioDaoMysql.php';
+
+$usuarioDao = new UsuarioDaoMysql($pdo);
 
 //Pegando os itens do formulário
 
@@ -9,8 +12,22 @@ $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL); //(FILTER_VAL
 //Confirmando a validação
 if ($nome && $email) {
 
+    if ($usuarioDao->findByEmail($email) === false) {
+        $novoUsuario = new Usuario();
+        $novoUsuario->setNome($nome);
+        $novoUsuario->setEmail($email);
+
+        $usuarioDao->add($novoUsuario);
+
+        header("Location: index.php");
+        exit();
+    } else {
+        header("Location: adicionar.php");
+        exit();
+    } 
+
     //VERIFICANDO O EMAIL...
-    $sql = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email");
+    /* $sql = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email");
     $sql->bindValue(':email', $email);
     $sql->execute();
 
@@ -38,5 +55,6 @@ if ($nome && $email) {
      */
 } else {
     header("Location: adicionar.php"); //Caso dê errado, voltar à página do formulário
-    exit;
+    exit; 
+
 }
