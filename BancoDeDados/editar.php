@@ -1,12 +1,19 @@
 <?php
 
 require 'configuration_db.php';
+require '../DAOPHP/dao/UsuarioDaoMysql.php';
 
-$info = [];
+$usuarioDao = new UsuarioDaoMysql($pdo);
+
+$usuario = false;
 $id = filter_input(INPUT_GET, 'id');
 
 if ($id) {
-    $sql = $pdo->prepare("SELECT * FROM usuarios where id = :id");
+
+    $usuario = $usuarioDao->findById($id);
+
+
+    /*$sql = $pdo->prepare("SELECT * FROM usuarios where id = :id");
     $sql->bindValue(':id', $id);
     $sql->execute();
 
@@ -15,26 +22,31 @@ if ($id) {
     } else {
         header("Location: index.php");
         exit;
-    }
+    }*/
 
-} else {
+}
+if ($usuario === false) {
+    header("Location: index.php");
+    exit();
+}/*else {
     header("Location: index.php");
     exit;
-}
+}*/
 ?>
 <h1>Editar Usuário</h1>
 <form method="POST" action="editar_action.php">
 
-    <input type="hidden" name="id" value="<?php echo $info['id']; ?>"/>
+    <input type="hidden" name="id" value="<?php echo $usuario->getId(); ?>"/>
 
     <label>
         Nome: <br/>
-        <input type="text" name="nome" value="<?= $info['nome']; ?> "/> <!-- Forma para mostrar na tela sem usar o 'echo' -->
+        <input type="text" name="nome" value="<?= $usuario->getNome(); ?> "/>
+        <!-- Forma para mostrar na tela sem usar o 'echo' -->
     </label><br/><br/>
 
     <label>
         Email: <br/>
-        <input type="email" name="email" value="<?= $info['email']; ?>"/>
+        <input type="email" name="email" value="<?= $usuario->getEmail(); ?>"/>
     </label><br/><br/>
 
     <input type="submit" value="Salvar"/>

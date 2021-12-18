@@ -61,13 +61,40 @@ class UsuarioDaoMysql implements UsuarioDAO
 
     public function findById($id)
     {
+        $sql = $this->pdo->prepare("SELECT * FROM usuarios WHERE id = :id");
+        $sql->bindValue(':id', $id);
+        $sql->execute();
+        if ($sql->rowCount() > 0) {
+            $data = $sql->fetch();
+
+            $u = new Usuario();
+            $u->setId($data['id']);
+            $u->setNome($data['nome']);
+            $u->setEmail($data['email']);
+
+            return $u;
+        } else {
+            return false;
+        }
     }
 
     public function udpate(Usuario $usuarioUpdate)
     {
+        $sql = $this->pdo->prepare("UPDATE usuarios SET nome = :nome, email = :email, id= :id");
+        $sql->bindValue(':nome', $usuarioUpdate->getNome());
+        $sql->bindValue(':email', $usuarioUpdate->getEmail());
+        $sql->bindValue(':id', $usuarioUpdate->getId());
+        $sql->execute();
+
+        return true;
     }
 
     public function delete($id)
     {
+        $sql = $this->pdo->prepare("DELETE FROM usuarios WHERE id = :id");
+        $sql->bindValue(':id', $id);
+        $sql->execute();
+
+        return true;
     }
 }

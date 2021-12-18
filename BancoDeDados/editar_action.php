@@ -1,5 +1,8 @@
 <?php
 require 'configuration_db.php'; //Pegando as informações da configuração do banco de dados para se ter acesso
+require '../DAOPHP/dao/UsuarioDaoMysql.php';
+
+$usuarioDao = new UsuarioDaoMysql($pdo);
 
 //Pegando os itens do formulário
 
@@ -9,16 +12,23 @@ $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL); //(FILTER_VAL
 
 //Confirmando a validação
 if ($id && $nome && $email) {
-    $sql = $pdo->prepare("UPDATE usuarios SET nome = :nome, email = :email WHERE id = :id");
+
+    $usuario = $usuarioDao->findById($id);
+    $usuario->setNome($nome);
+    $usuario->setEmail($email);
+
+    $usuarioDao->udpate($usuario);
+
+    /*$sql = $pdo->prepare("UPDATE usuarios SET nome = :nome, email = :email WHERE id = :id");
     $sql->bindValue(':nome', $nome);
     $sql->bindValue(':email', $email);
     $sql->bindValue('id', $id);
-    $sql->execute();
+    $sql->execute();*/
 
     header("Location: index.php");
     exit(); //Outra forma de se usar o exit
 
 } else {
-    header("Location: adicionar.php"); //Caso dê errado, voltar à página do formulário
+    header("Location: editar.php?id=" . $id); //Caso dê errado, voltar à página do formulário
     exit;
 }

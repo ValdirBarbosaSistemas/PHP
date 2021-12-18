@@ -1,13 +1,19 @@
 <?php
 
 require 'configuration_db.php';
+require '../DAOPHP/dao/UsuarioDaoMysql.php';
+
+$usuarioDao = new UsuarioDaoMysql($pdo);
 
 $id = filter_input(INPUT_GET, 'id');
 
 if ($id) {
-    $sql = $pdo->prepare("DELETE FROM usuarios WHERE id = :id");
+
+    $usuarioDao->delete($id);
+
+    /*$sql = $pdo->prepare("DELETE FROM usuarios WHERE id = :id");
     $sql->bindValue(':id', $id);
-    $sql->execute();
+    $sql->execute();*/
 
 }
 
