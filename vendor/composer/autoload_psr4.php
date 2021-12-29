@@ -7,6 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'classes\\' => array($baseDir . '/classes'),
-    'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
 );
