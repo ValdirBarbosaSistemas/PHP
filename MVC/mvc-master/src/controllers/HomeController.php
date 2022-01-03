@@ -23,7 +23,7 @@ class HomeController extends Controller
             'nome' => $nome, //colocando a variável na view através do 2 parâmetro OBS: ELE TA COLOCANDO A CHAVE DO ARRAY E NÃO A VARIÁVEL PROPRIAMENTE DITA
             'idade' => 90, //Ele coloca como VARIÁVEL A CHAVE DO ARRAY
             'posts' => $posts
-        ]);//carregando uma view
+        ]); //carregando uma view
         //echo "Olá Valdir";
     }
 
@@ -43,5 +43,4 @@ class HomeController extends Controller
     {
         print_r($args);
     }
-
 }

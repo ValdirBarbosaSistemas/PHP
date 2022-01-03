@@ -18,4 +18,6 @@ $router->get('/sobre', 'HomeController@sobre');*/
 //CRIANDO NOSSO CRUD EM MVC
 
 $router->get('/', 'HomeController@index');
+
 $router->get('/novo', 'UsuariosController@add'); //CREATE
+$router->post('/novo', 'UsuariosController@addAction');

@@ -4,11 +4,11 @@ namespace src;
 
 class Config
 {
-    const BASE_DIR = 'localhost/PHP/MVC/mvc-master/public';
+    const BASE_DIR = '/PHP/MVC/mvc-master/public';
 
     const DB_DRIVER = 'mysql';
     const DB_HOST = 'localhost';
-    const DB_DATABASE = 'banco_php';
+    const DB_DATABASE = 'test';
     const DB_USER = 'root';
     const DB_PASS = '';
 

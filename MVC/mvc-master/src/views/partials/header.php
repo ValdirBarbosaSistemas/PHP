@@ -3,8 +3,8 @@
     <title>Meu CRUD em MVC</title>
 </head>
 <body>
-<head>
+<header>
     <h1>Título do Site</h1>
     <hr>
-</head>
+</header>
 <!-- O BODY E HTML IRÁ SER FECHADO EM OUTRA 'partial' -->
