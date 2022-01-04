@@ -17,7 +17,11 @@ $router->get('/sobre', 'HomeController@sobre');*/
 
 //CRIANDO NOSSO CRUD EM MVC
 
-$router->get('/', 'HomeController@index');
+$router->get('/', 'HomeController@index'); //Aqui será o READ do CRUD
 
 $router->get('/novo', 'UsuariosController@add'); //CREATE
 $router->post('/novo', 'UsuariosController@addAction');
+$router->get('/usuario/{nome}/editar', 'UsuariosController@edit');
+$router->post('/usuario/{nome}/editar', 'UsuariosController@editAction');
+$router->get('/usuario/{nome}/excluir', 'UsuariosController@delete');
+$router->post('/usuario/{nome}/excluir', 'UsuariosController@deleteAction');

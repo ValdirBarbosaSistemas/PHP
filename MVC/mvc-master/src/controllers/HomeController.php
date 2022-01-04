@@ -3,11 +3,12 @@
 namespace src\controllers;
 
 use \core\Controller;
+//É como o 'import' do Java
+use \src\models\Usuario;
 
 class HomeController extends Controller
 {
-
-    public function index()
+    /*public function index()
     {
         $posts = [
             ['título' => 'Título de teste 1', 'corpo' => 'Corpo de teste 1'],
@@ -42,5 +43,13 @@ class HomeController extends Controller
     public function sobreP($args)
     {
         print_r($args);
+    }*/
+
+    public function index()
+    {
+        $usuarios = Usuario::select()->execute();
+        $this->render('home', [
+            'usuarios' => $usuarios
+        ]);
     }
 }
