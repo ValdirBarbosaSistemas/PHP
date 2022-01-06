@@ -25,9 +25,12 @@ Minha idade é: <? /*= $idade; */ ?> anos VARIÁVEL DECLARADA NO ARRAY EM 'HomeC
                 <td><?= $usuario['nome']; ?></td>
                 <td><?= $usuario['email']; ?></td>
                 <td>
-                    <a href="<?= $base; ?>/usuario/<?= $usuario ['nome']; ?>/editar">[ Editar ]</a>
+                    <a href="<?= $base; ?>/usuario/<?= $usuario ['nome']; ?>/editar">
+                        <img width="20" src="<?= $base; ?>/assets/images/document.png" alt="document"/> </a>
                     <!--LEMBRANDO QUE NO MVC EM PHP, O LINK SÃO AS ROTAS -->
-                    <a href="<?= $base; ?>/usuario/<?= $usuario ['nome']; ?>/excluir">[ Excluir ]</a>
+                    <a href="<?= $base; ?>/usuario/<?= $usuario ['nome']; ?>/excluir"
+                       onclick="return confirm('Tem certeza que deseja excluir?') "> </a>
+                    <img width="20" src="<?= $base; ?>/assets/images/trash.png" alt="trash"/> </a>
                 </td>
             </tr>
         <?php endforeach; ?>
