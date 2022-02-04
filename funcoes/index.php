@@ -9,6 +9,7 @@ function subsequente()
     }
     echo "<hr/>";
 }
+
 subsequente();
 
 //---------------------FUNÇÃO POR PARÂMETRO
@@ -33,6 +34,17 @@ function somar1(int $num1, int $num2, $num3 = 0)
 $soma = somar(10, 5, 2);
 echo "Total: " . $soma;
 
+//---NO PHP 8.1 FOI LANÇADO O 'NAMED ARGUMENTS' OU SEJA, PODEMOS MODIFICAR O VALOR DOS PARÂMETROS DA SEGUINTE FORMA
+
+function adicionar($a, $b = 10, $c = 30)
+{
+    return $a + $b + $c;
+    //SE EU QUISER MUDAR SOMENTE O VALOR DO PARÂMETRO 'C' FAZEMOS DESSA FORMA
+}
+
+adicionar(c: 100); //Basta dizer qual o parâmetro e colocando o sinal de ':' junto com o valor desejado
+
+
 //-------------------REFERÊNCIA OU VALOR
 
 //VALOR
@@ -41,6 +53,7 @@ function somar2($n1, $n2)
     $total = $n1 + $n2;
     return $total;
 }
+
 $x = 3;
 $y = 2;
 $soma = somar2($x, $y);
@@ -52,6 +65,7 @@ function somar3($n1, $n2, &$total) //Para se usar a variável por referência, u
 {
     $total = $n1 + $n2; //Aqui ele ja está modificado
 }
+
 $x = 3;
 $y = 2;
 //$soma = somar2($x, $y);
@@ -77,7 +91,7 @@ echo $funcao(1000);
 
 //------------------ARROW FUNCTIONS
 
-$dizimo = fn ($valor) => $valor * 0.1;
+$dizimo = fn($valor) => $valor * 0.1;
 echo $dizimo(1000);
 /**
  * Arrow functions é uma função ANÔNIMA que não precisa de return e toda sua declaração é 'fn'
