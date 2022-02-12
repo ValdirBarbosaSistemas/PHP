@@ -36,7 +36,7 @@ echo "Total: " . $soma;
 
 //---NO PHP 8.1 FOI LANÇADO O 'NAMED ARGUMENTS' OU SEJA, PODEMOS MODIFICAR O VALOR DOS PARÂMETROS DA SEGUINTE FORMA
 
-function adicionar($a, $b = 10, $c = 30)
+function adicionar($a = 1, $b = 10, $c = 30)
 {
     return $a + $b + $c;
     //SE EU QUISER MUDAR SOMENTE O VALOR DO PARÂMETRO 'C' FAZEMOS DESSA FORMA
@@ -91,7 +91,7 @@ echo $funcao(1000);
 
 //------------------ARROW FUNCTIONS
 
-$dizimo = fn($valor) => $valor * 0.1;
+$dizimo = fn ($valor) => $valor * 0.1;
 echo $dizimo(1000);
 /**
  * Arrow functions é uma função ANÔNIMA que não precisa de return e toda sua declaração é 'fn'
@@ -189,3 +189,15 @@ $pos = array_search(91, $numeros);
 
 echo date('d/m/Y H:i:s');
 //VER MAIS SOBRE A BIBLIOTECA DE DATE DO PHP
+
+
+//No PHP 8.1 chega o VARARGS ou o VARIADIC PARAMETER como é chamada originalmente
+
+function minha_funcao(...$argumentos)
+{
+    foreach ($argumentos as $args) {
+        echo "$args<br>";
+    }
+}
+
+minha_funcao(10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
