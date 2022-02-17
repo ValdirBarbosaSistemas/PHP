@@ -19,7 +19,9 @@ echo $resultado;
 /**
  * Na condição NULL CAO se coloca 2 '??' e a terceira condição é a negativa
  * ou seja, "se sobrenome estiver ok, concatena com o nomeCompleto. Caso contrário
- * não mostre nada. Praticamente isso.
+ * não mostre nada. Praticamente isso. Ocorre geralmente quando o resultado é a 
+ * própria variável, exemplo: "se $nomeCompleto == true, imprima ele, caso não,
+ * não imprima"
  */
 
 $nome = 'Valdir';

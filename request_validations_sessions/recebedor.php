@@ -6,7 +6,7 @@
 
 session_start(); //salvando os dados em uma seção (SEMPRE COLOCAR ANTES DA PÁGINA)
 
-$nome = filter_input(INPUT_POST, 'nome');
+$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS); //Para não gerar ATACK HACKER
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL); //Validação de email
 $idade = filter_input(INPUT_POST, 'idade', FILTER_SANITIZE_NUMBER_INT); // Ele vai alterar os dados para ficar de acordo com o que foi proposto
 /** O filterInput serve para pegar os dados da pagina e verifica
@@ -18,12 +18,14 @@ if ($nome && $email && $idade) {
 
     //LEMBRANDO QUE O PHP TRABALHA COM MILISEGUNDOS
     $expiracao = time() + (86400 * 30); //Aqui ele diz que tem um prazo de validade de 30 dias
-    setcookie('nomeCookie', $nome, $expiracao); //Definindo um cookie
+    setcookie('nomeCookie', $nome, $expiracao); //Definindo um cookie (1 - nome do cookie, 2 - o valor que será salvo no cookie, 3 - Quando é que o cookie espira)
     /**
      * Para definirmos um cookie colocamos a palavra 'setcookie' que recebe
      * vários parâmetros. Lembrando também que o cookie é TEMPORÁRIO, ou seja,
      * temos que colocar o nome do cookie, o valor que vai ser salvo no cookie
      * e o momento que ele expira.
+     * LEMBRANDO TAMBÉM QUE É NECESSÁRIO QUE O COOKIE SEJA INICIALIZADO ANTES DE CADA
+     * EXPRESSÃO QUE VENHA MOSTRAR ALGUM TIPO DE DADOS NA TELA.
      */
     echo 'NOME: ' . $nome . '<br/>';
     echo 'EMAIL: ' . $email . '<br/>';

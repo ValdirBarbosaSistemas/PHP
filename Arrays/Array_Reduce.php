@@ -9,7 +9,7 @@
 
 $numeros = [1, 2, 3, 4, 5];
 
-$total = array_reduce($numeros, 'somar');
+$total = array_reduce($numeros, 'somar'); //1 parâmetro é o array e o 2 parâmetro é o nome da variável/função criada
 
 function somar($contador, $valor)
 {
