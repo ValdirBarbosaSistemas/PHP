@@ -7,6 +7,7 @@ use \src\models\Usuario;
 
 class UsuariosController extends Controller
 {
+    //(add) que foi criado no arquivo de ROTAS
     public function add()
     {
         $this->render('add');//arquivo criado na view

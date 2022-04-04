@@ -80,7 +80,7 @@ class UsuarioDaoMysql implements UsuarioDAO
 
     public function udpate(Usuario $usuarioUpdate)
     {
-        $sql = $this->pdo->prepare("UPDATE usuarios SET nome = :nome, email = :email, id= :id");
+        $sql = $this->pdo->prepare("UPDATE usuarios SET nome = :nome, email = :email WHERE id= :id");
         $sql->bindValue(':nome', $usuarioUpdate->getNome());
         $sql->bindValue(':email', $usuarioUpdate->getEmail());
         $sql->bindValue(':id', $usuarioUpdate->getId());

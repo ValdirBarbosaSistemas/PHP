@@ -37,7 +37,7 @@ echo $nomeCompleto;
 
 //---------------------Condicional SWITCH
 
-//$tipo = 'foto';
+$tipo = 'foto';
 
 /* if ($tipo == 'foto') {
     echo 'Exibindo uma foto';

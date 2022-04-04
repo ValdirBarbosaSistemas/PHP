@@ -22,7 +22,7 @@ function somar($num1, $num2)
 
 $soma = somar(10, 5);
 echo "Total: " . $soma;
-
+echo "<hr/>";
 //--------------------PARÂMETRO OPCIONAL/VALOR PADRÃO/DEFINIR TIPO DE DADO
 
 function somar1(int $num1, int $num2, $num3 = 0)
@@ -44,7 +44,7 @@ function adicionar($a = 1, $b = 10, $c = 30)
 
 adicionar(c: 100); //Basta dizer qual o parâmetro e colocando o sinal de ':' junto com o valor desejado
 
-
+echo "<hr/>";
 //-------------------REFERÊNCIA OU VALOR
 
 //VALOR
@@ -74,8 +74,8 @@ $soma = 0;
 somar($x, $y, $soma); //O resultado será 5
 
 echo "Total: " . $soma;
-
-//-------------------FUNÇÕES ANÔNIMAS(CALLBACK)
+echo "<hr/>";
+//-------------------FUNÇÕES ANÔNIMAS
 
 $dizimo = function (int $valor) {
     return $valor * 0.1;
@@ -88,7 +88,7 @@ echo $funcao(1000);
  * FUNÇÕES ANÔNIMAS SÃO FUNÇÕES SEM NOME E QUE TAMBÉM PODEM SER USADAS/CHAMADAS
  * EM OUTRAS FUNÇÕES. OBS: EM FUNÇÕES ANÔNIMAS, SEMPRE É USADO NO FINAL DAS CHAVES '{}' O SINAL DE PONTO E VÍRGULA ';'
  */
-
+echo "<hr/>";
 //------------------ARROW FUNCTIONS
 
 $dizimo = fn ($valor) => $valor * 0.1;
@@ -97,7 +97,7 @@ echo $dizimo(1000);
  * Arrow functions é uma função ANÔNIMA que não precisa de return e toda sua declaração é 'fn'
  * junto com o sinal da flecha '=>'. NÃO SE USA RETURN
  */
-
+echo "<hr/>";
 //------------------FUNÇÕES RECURSIVAS
 
 function dividir(int $numero)
@@ -112,7 +112,7 @@ function dividir(int $numero)
 }
 
 dividir(100);
-
+echo "<hr/>";
 //---------------------FUNÇÕES NATIVAS (MATEMÁTICA)
 
 $numero = -8.4;
@@ -134,7 +134,7 @@ echo $aleatorios;
 $lista = [1, 9, 5, 7, 2, 6];
 echo max($lista); //Qual o maior número da lista
 echo min($lista); //Qual o menor número da lista
-
+echo "<hr/>";
 //VER NA DOCUMENTAÇÃO DO PHP TODOS OS TIPOS DE FUNÇÕES MATEMÁTICAS NATIVAS
 
 //------------------------FUNÇÕES NATIVAS (STRINGS)
@@ -152,7 +152,7 @@ echo strtoupper($nome); //MAIUSCULA
 
 $nomeAlterado = str_replace('Barbosa', 'Junior', $nome);
 echo $nomeAlterado;
-
+echo "<hr/>";
 //-----------------------FUNÇÕES NATIVAS (ARRAY)
 
 $lista = ['nome1', 'nome2', 'nome3', 'nome4'];
@@ -184,7 +184,7 @@ if (in_array(90, $numeros)) {
 
 $pos = array_search(91, $numeros);
 //mesma coisa do código acima PORÉM ele só retorna o elemento ou não
-
+echo "<hr/>";
 //--------------------------FUNÇÕES DATA E HORA
 
 echo date('d/m/Y H:i:s');

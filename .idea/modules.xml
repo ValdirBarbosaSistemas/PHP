@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://D:/Projetos_Programacao/ProjetosJavaScript/JavaScriptUDEMY/.idea/JavaScriptUDEMY.iml" filepath="D:/Projetos_Programacao/ProjetosJavaScript/JavaScriptUDEMY/.idea/JavaScriptUDEMY.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/PHP.iml" filepath="$PROJECT_DIR$/.idea/PHP.iml" />
     </modules>
   </component>
