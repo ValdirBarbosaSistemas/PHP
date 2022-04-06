@@ -113,6 +113,22 @@ function dividir(int $numero)
 
 dividir(100);
 echo "<hr/>";
+
+
+//---------------------FUNÇÕES CLOSURES
+
+//SÃO FUNÇÕES ANÔNIMAS QUE PODEM USAR VARIÁVEIS DO ESCOPO GLOBAL...
+
+
+$x = 20;
+$y = 30;
+
+$minhaClosure = function($z) use ($x, $y) {
+    echo "$z - $x - $y";
+    $y += 1000; //Esta instrução não vai alterar o valor de Y
+}
+
+
 //---------------------FUNÇÕES NATIVAS (MATEMÁTICA)
 
 $numero = -8.4;
