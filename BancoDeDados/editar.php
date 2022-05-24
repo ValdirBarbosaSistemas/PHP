@@ -10,6 +10,7 @@ $id = filter_input(INPUT_GET, 'id');
 
 if ($id) {
 
+    //BUSCANDO TODAS AS INFORMAÇÕES DO USUÁRIO NO BANCO
     $usuario = $usuarioDao->findById($id);
 
 
@@ -36,6 +37,7 @@ if ($usuario === false) {
 <h1>Editar Usuário</h1>
 <form method="POST" action="editar_action.php">
 
+    <!-- PEGANDO AS INFORMAÇÕES NO BANCO E COLOCANDO NO FORMULÁRIO -->
     <input type="hidden" name="id" value="<?php echo $usuario->getId(); ?>"/>
 
     <label>

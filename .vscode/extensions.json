@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "esbenp.prettier-vscode",
-        "DEVSENSE.phptools-vscode"
+        "devsense.phptools-vscode",
+        "TheNouillet.symfony-vscode"
     ]
 }

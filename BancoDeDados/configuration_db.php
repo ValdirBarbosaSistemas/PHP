@@ -1,6 +1,6 @@
 <?php
 
-//endereco
+//endereco(host)
 //nome_bd
 //usuario
 //senha

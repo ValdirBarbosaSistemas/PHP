@@ -1,0 +1,16 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f #VAI NEGAR/EXCLUIR TUDO QUE FOR UM ARQUIVO
+RewriteCond %{REQUEST_FILENAME} !-d #VAI NEGAR/EXCLUIR TUDO QUE FOR UM DIRETÓRIO
+RewriteRule ^(.*)$ /PHP/MVC/mvc_do_zero/index.php?url=$1 [QSA,L]
+#No código acima diz que ele vai verificar que qualquer coisa que ele acesse,
+#se o que está na url é um arquivo ou diretório, caso não for ele vai para a config.
+#de baixo e vai colocar o nome do "caminho" no parâmetro criado, que no caso é a
+#URL, para se ter acesso à página... vejamos o exemplo abaixo...
+#www.meusite.com.br/contato (contato é um arquivo?, é um diretório?, caso não ele
+#vai fazer dessa maneira... www.meusite.com.br/index.php?url=contato
+
+
+
+
+#HTACCESS É UM ARQUIVO RESPONSÁVEL PELAS CONFIGURAÇÕES DO APACHE
+#Essas configurações também são chamadas de URL_AMIGÁVEL, ou seja, para facilitar o entendimento ao usuário

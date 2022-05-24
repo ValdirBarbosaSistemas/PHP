@@ -126,7 +126,7 @@ $y = 30;
 $minhaClosure = function($z) use ($x, $y) {
     echo "$z - $x - $y";
     $y += 1000; //Esta instrução não vai alterar o valor de Y
-}
+};
 
 
 //---------------------FUNÇÕES NATIVAS (MATEMÁTICA)
@@ -217,3 +217,15 @@ function minha_funcao(...$argumentos)
 }
 
 minha_funcao(10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
+
+
+function soma(int ...$valores): string {
+    return array_sum($valores);
+}
+/**
+ * No código acima, ele faz um spread de INTEIROS, ou seja,
+ * TODOS OS PARÂMETROS da função só receberão valores INTEIROS.
+ * O tipo de retorno da função é do tipo STRING. O método
+ * array_sum serve para somar todos os valores que irão ser 
+ * recebidos no parâmetro
+ */

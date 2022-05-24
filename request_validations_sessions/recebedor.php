@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Método para pegar os dados do formulário no html
+ * Método para pegar os dados do formulário no images
  */
 
 session_start(); //salvando os dados em uma seção (SEMPRE COLOCAR ANTES DA PÁGINA)
@@ -12,7 +12,7 @@ $idade = filter_input(INPUT_POST, 'idade', FILTER_SANITIZE_NUMBER_INT); // Ele v
 /** O filterInput serve para pegar os dados da pagina e verifica
  *  se ta preenchido entre outras coisas. O PRIMEIRO PARAMETRO DIZ QUAL FOI
  *  O TIPO DE MÉTODO QUE FOI USADO/COLOCADO NO FORMULARIO. A SEGUNDA INFORMAÇÃO
- *  É O NOME DO CAMPO INFORMADO NO HTML
+ *  É O NOME DO CAMPO INFORMADO NO HTML(LABEL)
  */
 if ($nome && $email && $idade) {
 

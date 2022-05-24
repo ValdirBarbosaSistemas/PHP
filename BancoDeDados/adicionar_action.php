@@ -24,7 +24,7 @@ if ($nome && $email) {
     } else {
         header("Location: adicionar.php");
         exit();
-    } 
+    }
 
     //VERIFICANDO O EMAIL...
     /* $sql = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email");
