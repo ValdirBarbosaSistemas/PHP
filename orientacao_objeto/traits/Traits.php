@@ -24,7 +24,7 @@ trait MinhasAbilidades
 
 class Humano
 {
-    use MinhasAbilidades;
+    use MinhasAbilidades; //Para chamar o trait criado basta colocar a palavra reservada 'use'
 }
 
 $human1 = new Humano();

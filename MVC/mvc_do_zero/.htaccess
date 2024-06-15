@@ -1,6 +1,6 @@
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f #VAI NEGAR/EXCLUIR TUDO QUE FOR UM ARQUIVO
-RewriteCond %{REQUEST_FILENAME} !-d #VAI NEGAR/EXCLUIR TUDO QUE FOR UM DIRETÓRIO
+RewriteEngine On #ligar a maquina do rewrite
+RewriteCond %{REQUEST_FILENAME} !-f #VAI NEGAR/IGNORAR TUDO QUE FOR UM ARQUIVO REAL
+RewriteCond %{REQUEST_FILENAME} !-d #VAI NEGAR/IGNORAR TUDO QUE FOR UM DIRETÓRIO REAL
 RewriteRule ^(.*)$ /PHP/MVC/mvc_do_zero/index.php?url=$1 [QSA,L]
 #No código acima diz que ele vai verificar que qualquer coisa que ele acesse,
 #se o que está na url é um arquivo ou diretório, caso não for ele vai para a config.
